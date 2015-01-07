@@ -4,7 +4,7 @@
 domain=$1
 path=$2
 
-if [[ ! $path == "" ]]; then
+if [[ ! $path == "/" ]]; then
   echo "Only installation on / is supported. You should create a (sub)domain dedicated to monit"
   exit 1
 fi
@@ -14,6 +14,14 @@ if [[ ! $? -eq 0 ]]; then
   exit 1
 fi
 
+sudo apt-get update
+sudo apt-get install monit -y
+
+sudo cp -ar ../conf/monit/conf.d/* /etc/monit/conf.d
+sudo bash -c "echo set alert admin@$(cat /etc/yunohost/current_host) > /etc/monit/conf.d/yunohost-includes/alert"
+
+sudo service monit reload
+
 # Remove trailing "/" for next commands
 path=${path%/}
 
@@ -21,4 +29,4 @@ path=${path%/}
 sed -i "s@PATHTOCHANGE@$path@g" ../conf/nginx.conf
 sudo cp ../conf/nginx.conf /etc/nginx/conf.d/$domain.d/monit.conf
 sudo service nginx reload
-echo $?
+

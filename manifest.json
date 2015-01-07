@@ -2,31 +2,35 @@
   "name": "Monit",
   "id": "monit",
   "description": {
-    "en": "A Fast, Easy, and Free BitTorrent Client",
-    "fr": "Un client BitTorrent libre et rapide"
+    "en": "Monitoring of processes, files, directories, filesystems and hosts",
+    "fr": "Supervision de process, fichiers, répertoires, systèmes de fichiers and hôtes"
   },
-  "developer": {
-    "name": "kload",
-    "email": "kload@kload.fr",
-    "url": "http://kload.fr"
+  "url": "http://mmonit.com/monit/",
+  "maintainer": {
+    "name": "ju",
+    "email": "julien.malik@paraiso.me"
   },
   "multi_instance": "false",
   "arguments": {
     "install": [
       {
         "name": "domain",
+        "type": "domain",
         "ask": {
-          "en": "Choose a domain for Monit"
+          "en": "Choose a domain for Monit",
+          "fr": "Choisissez un domaine pour Monit"
         },
         "example": "domain.org"
       },
       {
         "name": "path",
+        "type": "path",
         "ask": {
-          "en": "Choose a path for Monit"
+          "en": "Choose a path for Monit",
+          "fr": "Choisissez un chemin pour Monit"
         },
-        "example": "/monit",
-        "default": "/monit"
+        "example": "/",
+        "default": "/"
       }
     ]
   }

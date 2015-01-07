@@ -11,3 +11,4 @@ path=${path%/}
 sed -i "s@PATHTOCHANGE@$path@g" ../conf/nginx.conf
 sudo cp ../conf/nginx.conf /etc/nginx/conf.d/$domain.d/monit.conf
 sudo service nginx reload
+sudo service monit reload
