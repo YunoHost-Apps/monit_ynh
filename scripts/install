@@ -4,10 +4,10 @@
 domain=$1
 path=$2
 
-if [[ ! $path == "/" ]]; then
-  echo "Only installation on / is supported. You should create a (sub)domain dedicated to monit"
-  exit 1
-fi
+#if [[ ! $path == "/" ]]; then
+#  echo "Only installation on / is supported. You should create a (sub)domain dedicated to monit"
+#  exit 1
+#fi
 
 sudo yunohost app checkurl $domain$path -a monit
 if [[ ! $? -eq 0 ]]; then 
