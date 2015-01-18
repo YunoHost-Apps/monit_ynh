@@ -1,4 +1,4 @@
-Transmission for YunoHost
--------------------------
+Monit for YunoHost
+------------------
 
-http://www.transmissionbt.com/
+http://mmonit.com/monit
