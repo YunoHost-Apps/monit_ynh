@@ -6,7 +6,7 @@ path=$(sudo yunohost app setting monit path)
 
 sudo cp -ar ../conf/monit/conf.d/* /etc/monit/conf.d
 sudo bash -c "echo set alert admin@$(cat /etc/yunohost/current_host) > /etc/monit/conf.d/yunohost-includes/alert"
-sudo service monit reload
+sudo service monit restart
 
 # Remove trailing "/" for next commands
 path=${path%/}
