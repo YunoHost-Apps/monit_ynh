@@ -4,6 +4,9 @@
 domain=$(sudo yunohost app setting monit domain)
 path=$(sudo yunohost app setting monit path)
 
+# clean up existing config first
+sudo rm -rf /etc/monit/conf.d/yunohost*
+
 sudo cp -ar ../conf/monit/conf.d/* /etc/monit/conf.d
 sudo bash -c "echo set alert admin@$(cat /etc/yunohost/current_host) > /etc/monit/conf.d/yunohost-includes/alert"
 sudo service monit restart
