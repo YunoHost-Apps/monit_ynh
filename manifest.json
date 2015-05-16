@@ -29,8 +29,8 @@
           "en": "Choose a path for Monit",
           "fr": "Choisissez un chemin pour Monit"
         },
-        "example": "/",
-        "default": "/"
+        "example": "/monit",
+        "default": "/monit"
       }
     ]
   }
